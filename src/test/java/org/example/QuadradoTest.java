@@ -4,19 +4,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class QuadradoTest {
-
+class RetanguloTest {
     @Test
     void testClone() throws CloneNotSupportedException {
-        Quadrado quadrado = new Quadrado("verde", new Forma(14.4, 4.7));
+        Retangulo retangulo = new Retangulo(5.6, 7.5, new Forma("Retangulo", "Verde"));
 
-        Quadrado quadradoClone = quadrado.clone();
-        quadradoClone.setCodigo(456);
-        quadradoClone.setNome("Camiseta");
-        quadradoClone.getModelo().setQuantidade(2);
+        Retangulo retanguloClone = retangulo.clone();
+        retanguloClone.setAltura(4.5);
+        retanguloClone.setLargura(8.0);
+        retanguloClone.getForma().setCor("Roxo");
 
-        assertEquals("Quadrado{código = 123, nome ='Camisa', Modelo =Modelo{modelo ='Esportiva', Quantidade =4}}", quadrado.toString());
-        assertEquals("Quadrado{código = 456, nome ='Camiseta', Modelo =Modelo{modelo ='Esportiva', Quantidade =2}}", quadradoClone.toString());
+        assertEquals("Retangulo{Altura =5.6, Largura =7.5, Forma =Forma{Forma =Retangulo, Cor =Verde}}", retangulo.toString());
+        assertEquals("Retangulo{Altura =4.5, Largura =8.0, Forma =Forma{Forma =Retangulo, Cor =Roxo}}", retanguloClone.toString());
     }
+
 
 }

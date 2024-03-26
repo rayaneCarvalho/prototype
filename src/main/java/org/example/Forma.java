@@ -1,28 +1,28 @@
 package org.example;
 
 public class Forma implements Cloneable {
-    private double altura;
-    private double largura;
+    private String forma;
+    private String cor;
 
-    public Forma(double altura, double largura) {
-        this.altura = altura;
-        this.largura = largura;
+    public Forma(String forma, String cor) {
+        this.forma = forma;
+        this.cor = cor;
     }
 
-    public double getaltura() {
-        return altura;
+    public String getForma() {
+        return forma;
     }
 
-    public void setaltura(double altura) {
-        this.altura = altura;
+    public void setForma(String forma) {
+        this.forma = forma;
     }
 
-    public double getlargura() {
-        return largura;
+    public String getCor() {
+        return cor;
     }
 
-    public void setlargura(double largura) {
-        this.largura = largura;
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
     @Override
@@ -32,8 +32,8 @@ public class Forma implements Cloneable {
 
     @Override
     public String toString() {
-        return "Altura = " +
-                altura + '\'' +
-                ", Largura =" + largura;
+        return "Forma{" +
+                "Forma =" + forma +
+                ", Cor =" + cor  + "}";
     }
 }

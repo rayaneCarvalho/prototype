@@ -7,15 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class CirculoTest {
     @Test
     void testClone() throws CloneNotSupportedException {
-        Quadrado quadrado = new Quadrado(123.25, 253.40, new Forma(10.4, 4));
+        Circulo circulo = new Circulo(5.6, new Forma("Círculo", "Preto"));
 
-        Quadrado quadradoClone = quadrado.clone();
-        quadradoClone.setCodigo(456);
-        quadradoClone.setNome("Camiseta");
-        quadradoClone.getForma().setQuantidade(2);
+        Circulo circuloClone = circulo.clone();
+        circuloClone.setRadius(4.5);
+        circuloClone.getForma().setCor("Azul");
 
-        assertEquals("Quadrado{código = 123, nome ='Camisa', Forma =Forma{modelo ='Esportiva', Quantidade =4}}", quadrado.toString());
-        assertEquals("Quadrado{código = 456, nome ='Camiseta', Forma =Forma{modelo ='Esportiva', Quantidade =2}}", quadradoClone.toString());
+        assertEquals("Circulo{Radius =5.6, Forma =Forma{Forma =Círculo, Cor =Preto}}", circulo.toString());
+        assertEquals("Circulo{Radius =4.5, Forma =Forma{Forma =Círculo, Cor =Azul}}", circuloClone.toString());
     }
 
 }

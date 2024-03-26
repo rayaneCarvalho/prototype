@@ -2,27 +2,19 @@ package org.example;
 
 public class Circulo implements Cloneable{
 
-    private Forma altura;
-    private Forma largura;
+    private Forma forma;
     private double radius;
 
-    public Circulo(Forma altura, Forma largura, double radius) {
-        this.altura = altura;
-        this.largura = largura;
+    public Circulo(double radius, Forma forma) {
         this.radius = radius;
+        this.forma = forma;
     }
 
-    public Forma getAltura() {
-        return altura;
+    public Forma getForma() {
+        return forma;
     }
-    public void setAltura(Forma altura) {
-        this.altura = altura;
-    }
-    public Forma getLargura() {
-        return largura;
-    }
-    public void setLargura(Forma largura) {
-        this.largura = largura;
+    public void setForma(Forma forma) {
+        this.forma = forma;
     }
 
     public double getRadius() {
@@ -37,16 +29,15 @@ public class Circulo implements Cloneable{
 
     @Override
     public Circulo clone() throws CloneNotSupportedException {
-        Circulo quadradoClone = (Circulo) super.clone();
-        quadradoClone.altura = (Forma) quadradoClone.altura.clone();
-        return quadradoClone;
+        Circulo circuloClone = (Circulo) super.clone();
+        circuloClone.forma = (Forma) circuloClone.forma.clone();
+        return circuloClone;
     }
 
     @Override
     public String toString() {
-        return "Quadrado{" +
-                "Altura = " + altura +
-                "Largura = " + largura +
-                ", Radius ='" + radius  + '}';
+        return "Circulo{" +
+                "Radius =" + radius +
+                ", Forma =" + forma  + "}";
     }
 }
